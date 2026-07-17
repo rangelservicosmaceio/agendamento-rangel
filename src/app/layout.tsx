@@ -2,8 +2,22 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://rangelmaridodealuguel.vercel.app"),
   title: "Marido de Aluguel - Agendamentos",
   description: "Agende seus servicos de consertos e manutencao",
+  openGraph: {
+    title: "Marido de Aluguel - Rangel",
+    description: "Rapido, limpo e sem dor de cabeca. Agende seu servico agora.",
+    images: ["/images/hero-rangel.png"],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Marido de Aluguel - Rangel",
+    description: "Rapido, limpo e sem dor de cabeca. Agende seu servico agora.",
+    images: ["/images/hero-rangel.png"],
+  },
 };
 
 export default function RootLayout({

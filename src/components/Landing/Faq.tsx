@@ -15,7 +15,8 @@ const perguntas = [
   },
   {
     pergunta: 'Como funciona o pagamento?',
-    resposta: 'Combinamos o valor antes de começar o serviço, sem surpresa. Aceito Pix e dinheiro.',
+    resposta:
+      'Combinamos o valor antes de começar o serviço, sem surpresa. Aceito Pix, dinheiro, débito ou crédito.',
   },
   {
     pergunta: 'Vocês dão garantia?',

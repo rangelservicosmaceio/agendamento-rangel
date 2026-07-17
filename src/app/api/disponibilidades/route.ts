@@ -32,6 +32,10 @@ function gerarSlotsDoMes(mes: string): DiaComSlots[] {
   const diasNoMes = new Date(ano, mesNumero, 0).getDate();
   const nomesDiaSemana = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sab'];
 
+  const agora = new Date();
+  const hoje = new Date(agora.getFullYear(), agora.getMonth(), agora.getDate());
+  const horaAtual = agora.getHours() * 60 + agora.getMinutes();
+
   const dias: DiaComSlots[] = [];
 
   for (let dia = 1; dia <= diasNoMes; dia++) {
@@ -39,16 +43,27 @@ function gerarSlotsDoMes(mes: string): DiaComSlots[] {
     const diaSemana = nomesDiaSemana[data.getDay()];
 
     if (diaSemana === 'dom' || diaSemana === 'sab') continue;
+    if (data < hoje) continue;
+
+    const ehHoje = data.getTime() === hoje.getTime();
+
+    const slots = HORARIOS_PADRAO.filter((h) => {
+      if (!ehHoje) return true;
+      const [horaSlot, minutoSlot] = h.hora.split(':').map(Number);
+      return horaSlot * 60 + minutoSlot > horaAtual;
+    }).map((h) => ({
+      hora: h.hora,
+      horaFim: h.horaFim,
+      disponivel: true,
+      ocupado: false,
+    }));
+
+    if (!slots.length) continue;
 
     dias.push({
       data: data.toISOString().slice(0, 10),
       diaSemana,
-      slots: HORARIOS_PADRAO.map((h) => ({
-        hora: h.hora,
-        horaFim: h.horaFim,
-        disponivel: true,
-        ocupado: false,
-      })),
+      slots,
     });
   }
 

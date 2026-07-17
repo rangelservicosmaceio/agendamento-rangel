@@ -19,7 +19,7 @@ export const Sobre: React.FC = () => {
               position: 'relative',
               borderRadius: 18,
               overflow: 'hidden',
-              aspectRatio: '4/5',
+              aspectRatio: '945/1680',
               background: 'linear-gradient(160deg,#132c50,#0e2340)',
               boxShadow: '0 24px 50px -18px #00000066',
             }}
@@ -28,7 +28,7 @@ export const Sobre: React.FC = () => {
               src="/images/hero-rangel.png"
               alt="Rangel sorrindo, ambiente residencial"
               fill
-              style={{ objectFit: 'contain', objectPosition: 'bottom' }}
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
             />
           </div>
         </div>

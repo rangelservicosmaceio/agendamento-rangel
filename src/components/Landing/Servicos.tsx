@@ -14,7 +14,7 @@ const servicos = [
   },
   {
     titulo: 'Montagem de móveis',
-    descricao: 'Monto guarda-roupa, cama, estante, rack e qualquer móvel que veio na caixa.',
+    descricao: 'Monto guarda-roupa de solteiro, cama, estante, rack e qualquer móvel que veio na caixa.',
     path: (
       <>
         <rect x="4" y="7" width="16" height="12" rx="1.5" />

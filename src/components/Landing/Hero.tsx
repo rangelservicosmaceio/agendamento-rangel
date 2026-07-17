@@ -78,8 +78,7 @@ export const Hero: React.FC = () => {
             Rápido, limpo e sem dor de cabeça.
           </h2>
           <p style={{ fontSize: 16.5, lineHeight: 1.65, color: '#c7cede', maxWidth: 490, margin: '0 0 30px' }}>
-            Sou o Rangel — resolvo os perrengues da sua casa ou do seu condomínio com respeito ao
-            seu tempo e ao seu espaço. Você me chama, eu resolvo.
+            Você chama, eu resolvo.
           </p>
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 30 }}>
             <a
@@ -140,7 +139,7 @@ export const Hero: React.FC = () => {
               position: 'relative',
               borderRadius: 20,
               overflow: 'hidden',
-              aspectRatio: '4/5',
+              aspectRatio: '945/1680',
               background: 'linear-gradient(160deg,#132c50,#0b1f3a)',
               boxShadow: '0 30px 60px -20px #00000066',
             }}
@@ -150,7 +149,7 @@ export const Hero: React.FC = () => {
               alt="Rangel, especialista em serviços residenciais"
               fill
               priority
-              style={{ objectFit: 'contain', objectPosition: 'bottom' }}
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
             />
           </div>
         </div>
