@@ -2,9 +2,9 @@ import React from 'react';
 import { ACCENT } from './constants';
 
 const exemplos = [
-  { titulo: 'Trocar chuveiro', tempo: '~1h', valor: 'R$ 80-100' },
-  { titulo: 'Montagem de móvel', tempo: '~2-3h', valor: 'R$ 160-300' },
-  { titulo: 'Manutenção geral', tempo: '', valor: 'consultamos no local' },
+  { titulo: 'Trocar chuveiro', valor: '~R$ 80', tempo: '20-30min' },
+  { titulo: 'Montagem de móvel', valor: '~R$ 150-300', tempo: '2-3h' },
+  { titulo: 'Manutenção geral', valor: 'consultamos', tempo: '' },
 ];
 
 export const Preco: React.FC = () => {
@@ -44,10 +44,10 @@ export const Preco: React.FC = () => {
                 }}
               >
                 <span style={{ fontSize: 14.5, color: '#1a2233' }}>
-                  <strong>{item.titulo}</strong>
-                  {item.tempo && <span style={{ color: '#8b96a5' }}> — {item.tempo}</span>}
+                  <strong>{item.titulo}:</strong>{' '}
+                  <span style={{ fontWeight: 700, color: '#c98a1e' }}>{item.valor}</span>
+                  {item.tempo && <span style={{ color: '#8b96a5' }}> ({item.tempo})</span>}
                 </span>
-                <span style={{ fontSize: 14.5, fontWeight: 700, color: '#c98a1e' }}>{item.valor}</span>
               </div>
             ))}
           </div>
