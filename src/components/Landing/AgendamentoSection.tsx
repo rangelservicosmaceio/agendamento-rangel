@@ -79,6 +79,7 @@ export const AgendamentoSection: React.FC = () => {
             }}
           >
             <div
+              className="animate-check"
               style={{
                 width: 56,
                 height: 56,
@@ -107,6 +108,7 @@ export const AgendamentoSection: React.FC = () => {
               href={waLink}
               target="_blank"
               rel="noopener"
+              className="transition-transform duration-200 hover:scale-105 active:scale-95"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',

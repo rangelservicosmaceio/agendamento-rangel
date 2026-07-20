@@ -25,3 +25,94 @@ button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+/* Entrada suave (hero e outros blocos) */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeSlideLeft {
+  from { opacity: 0; transform: translateX(28px) scale(0.98); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+.animate-fade-up {
+  animation: fadeSlideUp 0.7s ease-out both;
+}
+.animate-fade-left {
+  animation: fadeSlideLeft 0.8s ease-out both;
+}
+.delay-1 { animation-delay: 0.08s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.34s; }
+.delay-4 { animation-delay: 0.48s; }
+.delay-5 { animation-delay: 0.6s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up, .animate-fade-left {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Fundo ambiente sutil no hero */
+@keyframes floatSlow {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(18px, -22px); }
+}
+.ambient-blob {
+  animation: floatSlow 12s ease-in-out infinite;
+}
+.ambient-blob-delay {
+  animation: floatSlow 14s ease-in-out infinite;
+  animation-delay: -6s;
+}
+
+/* Icones animados dos servicos (ativam com hover no card) */
+@keyframes boltFlicker {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  45% { opacity: 0.55; transform: scale(0.92); }
+  60% { opacity: 1; transform: scale(1.05); }
+}
+@keyframes dropFall {
+  0%, 100% { transform: translateY(-2px); opacity: 0.75; }
+  50% { transform: translateY(3px); opacity: 1; }
+}
+@keyframes pieceSnap {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  50% { transform: translateX(2px) rotate(-4deg); }
+}
+@keyframes swingHook {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(10deg); }
+}
+@keyframes spinPlus {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(180deg); }
+}
+.group:hover .icon-bolt { animation: boltFlicker 0.7s ease-in-out; }
+.group:hover .icon-drop { animation: dropFall 1s ease-in-out infinite; }
+.group:hover .icon-piece { animation: pieceSnap 0.5s ease-in-out infinite; }
+.group:hover .icon-swing { animation: swingHook 0.6s ease-in-out infinite; transform-origin: top center; }
+.group:hover .icon-plus { animation: spinPlus 0.4s ease-out forwards; }
+
+/* Loading - 3 pontinhos */
+@keyframes dotBounce {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+.dot-loader span {
+  animation: dotBounce 1.2s infinite ease-in-out both;
+}
+.dot-loader span:nth-child(2) { animation-delay: 0.15s; }
+.dot-loader span:nth-child(3) { animation-delay: 0.3s; }
+
+/* Checkmark animado de confirmacao */
+@keyframes checkPop {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-check {
+  animation: checkPop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}

@@ -108,7 +108,7 @@ export const FormularioAgendamento: React.FC<FormularioAgendamentoProps> = ({
       <button
         type="submit"
         disabled={carregando}
-        className="w-full bg-blue-600 text-white p-2 rounded font-bold hover:bg-blue-700"
+        className="w-full bg-blue-600 text-white p-2 rounded font-bold transition-transform duration-150 hover:bg-blue-700 hover:scale-[1.02] active:scale-95"
       >
         {carregando ? 'Agendando...' : 'Confirmar Agendamento'}
       </button>

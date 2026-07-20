@@ -5,16 +5,19 @@ const servicos = [
   {
     titulo: 'Troca de tomadas, chuveiro, lâmpadas',
     descricao: 'Instalação e troca de tomadas, interruptores, chuveiros elétricos e pontos de luz.',
+    iconClass: 'icon-bolt',
     path: <path d="M13 2L4 14h7l-1 8 9-12h-7z" />,
   },
   {
     titulo: 'Vazamentos, torneiras, sifão',
     descricao: 'Reparo de vazamentos, troca de torneiras, sifões e registros.',
+    iconClass: 'icon-drop',
     path: <path d="M12 2s6 7 6 12a6 6 0 01-12 0c0-5 6-12 6-12z" />,
   },
   {
     titulo: 'Montagem de móveis',
     descricao: 'Monto guarda-roupa de solteiro, cama, estante, rack e qualquer móvel que veio na caixa.',
+    iconClass: 'icon-piece',
     path: (
       <>
         <rect x="4" y="7" width="16" height="12" rx="1.5" />
@@ -25,6 +28,7 @@ const servicos = [
   {
     titulo: 'Instalações (TV, cortina, suporte)',
     descricao: 'Fixação de TV, suportes, cortinas, prateleiras e quadros.',
+    iconClass: 'icon-swing',
     path: (
       <>
         <path d="M14.7 6.3a4 4 0 015.7 5.6l-6.1 6.1a2 2 0 01-2.8 0l-5.7-5.7a2 2 0 010-2.8l6.1-6.1a4 4 0 013.5-1.1" />
@@ -53,9 +57,23 @@ export const Servicos: React.FC = () => {
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: 20 }}>
           {servicos.map((s) => (
-            <div key={s.titulo} style={{ background: '#fff', border: '1px solid #e7e2d8', borderRadius: 16, padding: '26px 22px' }}>
+            <div
+              key={s.titulo}
+              className="group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              style={{ background: '#fff', border: '1px solid #e7e2d8', borderRadius: 16, padding: '26px 22px' }}
+            >
               <div style={{ width: 46, height: 46, borderRadius: 12, background: '#0b1f3a', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  className={s.iconClass}
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke={ACCENT}
+                  strokeWidth={1.8}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   {s.path}
                 </svg>
               </div>
@@ -64,6 +82,7 @@ export const Servicos: React.FC = () => {
             </div>
           ))}
           <div
+            className="group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             style={{
               background: `${ACCENT}14`,
               border: `1.5px dashed ${ACCENT}77`,
@@ -74,7 +93,7 @@ export const Servicos: React.FC = () => {
             }}
           >
             <div style={{ width: 46, height: 46, borderRadius: 12, background: ACCENT, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a1200" strokeWidth={2.2} strokeLinecap="round">
+              <svg className="icon-plus" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a1200" strokeWidth={2.2} strokeLinecap="round">
                 <path d="M12 5v14M5 12h14" />
               </svg>
             </div>
@@ -82,7 +101,13 @@ export const Servicos: React.FC = () => {
             <div style={{ fontSize: 14, color: '#6a7286', lineHeight: 1.55, marginBottom: 14, flex: 1 }}>
               Tem outro perrengue em casa? Me chama e vejo como ajudar.
             </div>
-            <a href={waLink} target="_blank" rel="noopener" style={{ fontSize: 13.5, fontWeight: 700, color: '#0b1f3a', textDecoration: 'none' }}>
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener"
+              className="transition-transform duration-200 hover:scale-105 active:scale-95"
+              style={{ fontSize: 13.5, fontWeight: 700, color: '#0b1f3a', textDecoration: 'none', alignSelf: 'flex-start' }}
+            >
               Falar no WhatsApp →
             </a>
           </div>

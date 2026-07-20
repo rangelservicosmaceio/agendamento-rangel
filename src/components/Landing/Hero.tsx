@@ -20,6 +20,38 @@ export const Hero: React.FC = () => {
         overflow: 'hidden',
       }}
     >
+      {/* Fundo ambiente sutil */}
+      <div
+        aria-hidden
+        className="ambient-blob"
+        style={{
+          position: 'absolute',
+          top: '-10%',
+          right: '5%',
+          width: 380,
+          height: 380,
+          borderRadius: '50%',
+          background: `radial-gradient(circle, ${ACCENT}22 0%, transparent 70%)`,
+          filter: 'blur(30px)',
+          pointerEvents: 'none',
+        }}
+      />
+      <div
+        aria-hidden
+        className="ambient-blob-delay"
+        style={{
+          position: 'absolute',
+          bottom: '-15%',
+          left: '0%',
+          width: 320,
+          height: 320,
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, #3ddc8420 0%, transparent 70%)',
+          filter: 'blur(30px)',
+          pointerEvents: 'none',
+        }}
+      />
+
       <div
         style={{
           maxWidth: 1200,
@@ -34,6 +66,7 @@ export const Hero: React.FC = () => {
       >
         <div style={{ flex: '1 1 460px', minWidth: 300, paddingBottom: 56 }}>
           <div
+            className="animate-fade-up"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -54,6 +87,7 @@ export const Hero: React.FC = () => {
             Especialista em condomínios e residências
           </div>
           <h1
+            className="animate-fade-up delay-1"
             style={{
               fontFamily: "'Poppins', sans-serif",
               fontWeight: 800,
@@ -66,6 +100,7 @@ export const Hero: React.FC = () => {
             Marido de Aluguel
           </h1>
           <h2
+            className="animate-fade-up delay-2"
             style={{
               fontFamily: "'Poppins', sans-serif",
               fontWeight: 700,
@@ -81,9 +116,10 @@ export const Hero: React.FC = () => {
             <br />
             A partir de R$ 80/hora.
           </h2>
-          <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 30 }}>
+          <div className="animate-fade-up delay-3" style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 30 }}>
             <a
               href="#agendamento"
+              className="transition-transform duration-200 hover:scale-105 active:scale-95"
               style={{
                 background: ACCENT,
                 color: '#1a1200',
@@ -101,6 +137,7 @@ export const Hero: React.FC = () => {
               href={waLink}
               target="_blank"
               rel="noopener"
+              className="transition-transform duration-200 hover:scale-105 active:scale-95"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -122,7 +159,7 @@ export const Hero: React.FC = () => {
               Chamar no WhatsApp
             </a>
           </div>
-          <div style={{ display: 'flex', gap: 22, flexWrap: 'wrap' }}>
+          <div className="animate-fade-up delay-4" style={{ display: 'flex', gap: 22, flexWrap: 'wrap' }}>
             {checkItems.map((item) => (
               <span key={item} style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: 13.5, color: '#aeb8cb' }}>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
@@ -134,7 +171,7 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div style={{ flex: '1 1 340px', minWidth: 280, maxWidth: 440, position: 'relative', paddingBottom: 40 }}>
+        <div className="animate-fade-left delay-2" style={{ flex: '1 1 340px', minWidth: 280, maxWidth: 440, position: 'relative', paddingBottom: 40 }}>
           <div
             style={{
               position: 'relative',

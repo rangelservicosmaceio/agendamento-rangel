@@ -67,7 +67,11 @@ export const Depoimentos: React.FC = () => {
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 22 }}>
           {depoimentos.map((d) => (
-            <div key={d.nome} style={{ background: '#132c50', border: '1px solid #ffffff14', borderRadius: 16, padding: 26 }}>
+            <div
+              key={d.nome}
+              className="transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              style={{ background: '#132c50', border: '1px solid #ffffff14', borderRadius: 16, padding: 26 }}
+            >
               <Estrelas />
               <p style={{ fontSize: 15, lineHeight: 1.65, color: '#dbe0ec', margin: '0 0 18px' }}>{d.texto}</p>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
