@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { UsuarioAdmin } from '@/types';
 
 export default function DashboardPage() {
@@ -78,6 +79,19 @@ export default function DashboardPage() {
         <div className="bg-white mt-6 p-6 rounded shadow">
           <h2 className="text-xl font-bold mb-4">Agendamentos Recentes</h2>
           <p className="text-gray-600">Nenhum agendamento ainda</p>
+        </div>
+
+        <div className="bg-white mt-6 p-6 rounded shadow flex items-center justify-between flex-wrap gap-4">
+          <div>
+            <h2 className="text-xl font-bold mb-1">Recibos</h2>
+            <p className="text-gray-600">Gere e consulte recibos de pagamento em PDF</p>
+          </div>
+          <Link
+            href="/admin/recibos"
+            className="bg-blue-600 text-white px-4 py-2 rounded font-bold hover:bg-blue-700"
+          >
+            Abrir Recibos
+          </Link>
         </div>
       </div>
     </main>
