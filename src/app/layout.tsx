@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Marido de Aluguel - Rangel",
     description: "Rapido, limpo e sem dor de cabeca. Agende seu servico agora.",
-    images: ["/images/hero-rangel.png"],
+    images: ["/images/og-logo.png"],
     locale: "pt_BR",
     type: "website",
   },
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Marido de Aluguel - Rangel",
     description: "Rapido, limpo e sem dor de cabeca. Agende seu servico agora.",
-    images: ["/images/hero-rangel.png"],
+    images: ["/images/og-logo.png"],
   },
 };
 
